@@ -16,13 +16,13 @@ from tensorflow.keras.callbacks import CSVLogger
 from tensorflow.keras.models import model_from_json
 
 test_dir = 'images'
-display_dir = 'images/50'
+display_dir = 'images/100'
 file_name = 'vgg16_coin_fine'
-coins = ["1", "5", "10", "50", "100", "500"]
+coins = ["1", "10", "100", "5", "50", "500"]
 BATCH_SIZE = 64
 
 
-model = tensorflow.keras.models.load_model('vgg16_coin_fine.h5')
+model = tensorflow.keras.models.load_model('vgg16_coin_fine (1).h5')
 
 model.compile(optimizer=SGD(lr=0.0001,momentum=0.9),
               loss='categorical_crossentropy',
@@ -59,6 +59,7 @@ for i in range(2):
     #predict image
     img_pred=model.predict(temp_img_array)
     plt.title(coins[np.argmax(img_pred)] + "yen desu!")
+    print(img_pred)
     #eliminate xticks,yticks
     plt.xticks([]),plt.yticks([])
 
