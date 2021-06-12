@@ -1,3 +1,4 @@
+import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D,Input
 from tensorflow.keras.applications.vgg16 import VGG16
@@ -7,7 +8,8 @@ from tensorflow.keras.callbacks import CSVLogger
 
 N_CATEGORIES  = 6
 IMAGE_SIZE = 224
-BATCH_SIZE = 16
+BATCH_SIZE = 64
+epochs = 10
 
 train_dir='auged_data/train'
 validation_dir='auged_data/validation'
@@ -58,7 +60,7 @@ validation_generator = validation_datagen.flow_from_directory(
 )
 
 hist=model.fit_generator(train_generator,
-                         epochs=200,
+                         epochs=epochs,
                          verbose=1,
                          validation_data=validation_generator,
                          callbacks=[CSVLogger(file_name+'.csv')])
