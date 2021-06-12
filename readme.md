@@ -10,12 +10,12 @@
 - pillow-8.2.0
 
 ## ハフ変換による円検出
-ハフ変換を用いて円(硬貨)を検出している．
+ハフ変換を用いて円(硬貨)を検出している．  
 coin_detection.pyから実行可能
 
 ## VGG16を用いた硬貨の分類
-VGG16と呼ばれるニューラルネットワークを用いる事で検出した硬貨の種類を分類している．
-ImageNetを学習済み．
+VGG16と呼ばれるニューラルネットワークを用いる事で検出した硬貨の種類を分類している．  
+ImageNetを学習済みのモデルを転移学習する事で硬貨の分類をしている．
 
 ## 参考にしたサイト
 - http://labs.eecs.tottori-u.ac.jp/sd/Member/oyamada/OpenCV/html/py_tutorials/py_imgproc/py_houghcircles/py_houghcircles.html
